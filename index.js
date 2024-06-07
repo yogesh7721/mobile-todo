@@ -12,7 +12,7 @@ app.use(cors())
 
 app.use("/api/todos", require("./route/todo.routes"))
 
-app.use("*", () => {
+app.use("*", (req, res) => {
     res.status(404).json({ message: "Resource Not Found" })
 })
 
